@@ -15,3 +15,6 @@ RUN apt-get update -y && \
 
 # Install nodejs 4.x
 RUN curl -sL https://deb.nodesource.com/setup_4.x | bash - && apt-get install --yes nodejs
+
+COPY requirements.txt /requirements.txt
+RUN pip install -r /requirements.txt
