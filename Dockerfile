@@ -29,4 +29,5 @@ RUN curl --silent https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key
     apt-get update && \
     apt-get install -y nodejs
 
-
+ONBUILD COPY ./requirements.txt /requirements.txt
+ONBUILD RUN pip install -r /requirements.txt
